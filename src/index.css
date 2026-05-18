@@ -1,0 +1,52 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01';
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, rgba(56, 189, 248, 0.08), transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.06), transparent 50%),
+    #020617;
+}
+
+button {
+  font-family: inherit;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition-all hover:bg-sky-400 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-slate-50 hover:bg-slate-800/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm;
+  }
+  .answer-btn {
+    @apply relative flex items-center justify-center rounded-xl border-2 border-slate-700 bg-slate-800/40 px-4 py-4 text-left font-medium text-slate-100 transition-all hover:border-slate-500 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 disabled:cursor-not-allowed;
+  }
+  .answer-btn-correct {
+    @apply !border-emerald-400 !bg-emerald-500/20 !text-emerald-100;
+  }
+  .answer-btn-wrong {
+    @apply !border-rose-400 !bg-rose-500/20 !text-rose-100;
+  }
+  .answer-btn-reveal {
+    @apply !border-emerald-400/60 !bg-emerald-500/10 !text-emerald-100;
+  }
+}
