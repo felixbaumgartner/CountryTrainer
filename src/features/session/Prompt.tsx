@@ -66,7 +66,9 @@ export function Prompt({
   const promptLabel = useMemo(() => {
     switch (shows) {
       case 'flag':
-        return 'Which country has this flag?';
+        return asks === 'country'
+          ? 'Which country has this flag?'
+          : "What is this country's capital?";
       case 'country':
         return asks === 'capital'
           ? "What is this country's capital?"
